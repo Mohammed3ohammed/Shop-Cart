@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import PageHeader from '../components/PageHeader'
 import Data from "../products.json"
+import ProductCards from './ProductCards'
 const showResults = "Showing 01 - 12 of 139 Results"
 
 
 const Shop = () => {
 const [GridList, setGridList] = useState(true);
 const [products, setproducts] = useState(Data);
-console.log(products)
+
 
   return (
     <div>
@@ -32,8 +33,9 @@ console.log(products)
             </a>
             </div>
                 </div>
-                <div className=''>
-
+                {/* products card */}
+                <div>
+                <ProductCards GridList={GridList} products={products} />
                 </div>
               </article>
             </div>
