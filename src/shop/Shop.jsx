@@ -4,6 +4,7 @@ import Data from "../products.json"
 import ProductCards from './ProductCards'
 import Pgaination from './Pagination'
 import Search from './Search'
+import ShopCategory from './ShopCategory'
 const showResults = "Showing 01 - 12 of 139 Results"
 
 
@@ -23,6 +24,19 @@ const currentProducts = products.slice(indexOfLastProduct , indexOfFirstProduct)
 const paginate = (pageNumber) => {
   setCurrentPage(pageNumber)
 }
+
+// filter products based on category
+const [selectedCategory, setselectedCategory] = useState("All");
+const menuItems  = [...new Set(Data.map((val) => val.category))];
+
+const filterItems = (curcat) => {
+  const newItem = Data.filter((newVal) => {
+    return newVal.category === curcat;
+  })
+  setselectedCategory(curcat);
+  setproducts(newItem)
+}
+
   return (
     <div>
       <PageHeader title="Our Shop Page" curPage="Shop" />
@@ -66,7 +80,13 @@ const paginate = (pageNumber) => {
                 products = { products} 
                 GridList = {GridList}
                 />
-
+                <ShopCategory 
+                filterItems={filterItems}
+                setItem={setproducts}
+                menuItems={menuItems}
+                setproducts={setproducts}
+                selectedCategory={selectedCategory}
+                />
               </aside>
             </div>
           </div>
