@@ -18,7 +18,7 @@ import Shop from './shop/Shop';
 import SingleProduct from './shop/SingleProduct';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <Router>
+  <Router basename="/Shop-Cart">
     <Routes>
       <Route path="/" element={<App/>}>
         <Route index element={<Home />} />
@@ -29,4 +29,3 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </Routes>
   </Router>
 );
-
