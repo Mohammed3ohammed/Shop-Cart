@@ -20,7 +20,7 @@ import SingleProduct from './shop/SingleProduct';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Router basename="/Shop-Cart">
     <Routes>
-      <Route path="/" element={<App/>}>
+      <Route  element={<App/>}> 
         <Route index element={<Home />} />
         <Route path="blog" element={<Blog />} />
         <Route path="shop" element={<Shop />} />
@@ -29,3 +29,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </Routes>
   </Router>
 );
+
+
+//path="/"
