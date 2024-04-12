@@ -16,6 +16,9 @@ import Home from './home/Home';
 import Blog from './blog/Blog';
 import Shop from './shop/Shop';
 import SingleProduct from './shop/SingleProduct';
+import CartPage from './shop/CartPage';
+import { About } from './about/About';
+import Contact from './contactPage/Contact';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Router basename="/Shop-Cart">
@@ -25,6 +28,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="blog" element={<Blog />} />
         <Route path="shop" element={<Shop />} />
         <Route path="shop/:id" element={<SingleProduct />} />
+        <Route path="/cart-page" element={<CartPage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Route>
     </Routes>
   </Router>

@@ -27,4 +27,4 @@ const PageHeader = ({title, curPage}) => {
   )
 }
 
-export default PageHeader
+export default PageHeader;

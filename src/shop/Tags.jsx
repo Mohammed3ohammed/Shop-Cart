@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const title = "Most Popular Tags"
 const tagsList = [
@@ -24,7 +25,7 @@ const Tags = () => {
         <ul className='widget-wrapper'>
                     {
                         tagsList.map((val, i) => (
-                            <li key={i}><a href={val.link}>{val.text}</a></li>
+                            <li key={i}><Link to={val.link}>{val.text}</Link></li>
                         ))
                     }
                 </ul>
@@ -32,4 +33,4 @@ const Tags = () => {
   )
 }
 
-export default Tags
+export default Tags;

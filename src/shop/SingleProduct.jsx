@@ -1,5 +1,5 @@
     import React, { useEffect, useState } from 'react'
-    import '../products.json'
+    // import '../products.json';
     import { useParams } from 'react-router-dom';
     import PageHeader from '../components/PageHeader';
 // Import Swiper React components
@@ -9,15 +9,30 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from 'swiper/modules';
 import ProductDisplay from './ProductDisplay';
-
-
-
     const SingleProduct = () => {
-    const  [product , setproduct] = useState([]);
+    const  [product , setProduct] = useState([]);
     const { id } = useParams() ;
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
     useEffect(() => {
-        fetch("/src/products.json").then (res => res.json()).then(data => setproduct(data))
-    }, [])
+        fetch("/src/products.json").then (res => res.json()).then(data => setProduct(data))
+    }, []);
+    useEffect(() => {
+        fetch("/src/products.json")
+          .then(res => res.json())
+          .then(
+            (data) => {
+              setProduct(data);
+              setLoading(false);
+            },
+            (error) => {
+              setError(error);
+              setLoading(false);
+            }
+          );
+      }, []);
+    
+    /////////
 
     const result = product.filter((p) => p.id === id);
     
@@ -63,10 +78,10 @@ import ProductDisplay from './ProductDisplay';
                                     }
                                     </Swiper>
                                     <div className='pro-single-next'>
-                                        <i className='iconfont-rounded-left'></i>
+                                        <i className='icofont-rounded-left'></i>
                                     </div>
                                     <div className='pro-single-prev'>
-                                        <i className='iconfont-rounded-right'></i>
+                                        <i className='icofont-rounded-right'></i>
                                     </div>
                                     </div>
                                 </div>
