@@ -4,8 +4,8 @@ const des =
   "Energistia an deliver atactica metrcs after avisionary Apropria transition enterpris an sourcse applications emerging psd template.";
 
 const ProductDisplay = ({ item }) => {
-  const { name, seller, price, retingsCount } = item; // ✅ حذف `id` لأنه غير مستخدم
-  const [prequantity, setQuantity] = useState(1); // ✅ تحديد قيمة افتراضية
+  const { name, seller, price, retingsCount } = item; 
+  const [prequantity, setQuantity] = useState(1); 
   const [size, setSize] = useState("Select Size");
   const [color, setColor] = useState("Select Color");
 
@@ -18,12 +18,12 @@ const ProductDisplay = ({ item }) => {
   };
 
   const handleIncrease = () => {
-    setQuantity((prev) => prev + 1); // ✅ زيادة الكمية
+    setQuantity((prev) => prev + 1);
   };
 
   const handleDecrease = () => {
     if (prequantity > 1) {
-      setQuantity((prev) => prev - 1); // ✅ تقليل الكمية مع التأكد أنها لا تقل عن 1
+      setQuantity((prev) => prev - 1);
     }
   };
 

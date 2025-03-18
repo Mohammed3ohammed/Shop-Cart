@@ -13,7 +13,7 @@ const SingleProduct = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch("/products.json") // تأكد أن الملف داخل مجلد public
+        fetch("/products.json") 
             .then(res => res.json())
             .then(
                 (data) => {
