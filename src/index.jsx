@@ -19,6 +19,12 @@ import SingleProduct from './shop/SingleProduct';
 import CartPage from './shop/CartPage';
 import { About } from './about/About';
 import Contact from './contactPage/Contact';
+import Login from './Login/login';
+import Sign from './Sign/sign';
+
+
+
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Router basename="/Shop-Cart">
@@ -31,10 +37,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/cart-page" element={<CartPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+       <Route path="/sign" element={<Sign />} /> 
       </Route>
     </Routes>
   </Router>
 );
 
 
-//path="/"
