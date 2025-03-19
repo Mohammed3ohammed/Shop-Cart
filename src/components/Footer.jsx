@@ -69,7 +69,7 @@ const Footer = () => {
                                     {
                                         addressList.map((val, i) => (
                                             <li key={i}>
-                                                <li className={val.iconName}>{val.text}</li>
+                                                 <i className={val.iconName}></i> {val.text}
                                             </li>
                                         ))
                                     }
